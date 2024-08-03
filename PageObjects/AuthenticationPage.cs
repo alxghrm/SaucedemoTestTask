@@ -7,7 +7,7 @@ namespace SaucedemoTestTask.PageObjects
         private readonly ILocator _usernameInput;
         private readonly ILocator _passwordInput;
         private readonly ILocator _loginButton;
-        public ILocator error;
+        public readonly ILocator error;
 
         public AuthenticationPage(IPage page)
         {

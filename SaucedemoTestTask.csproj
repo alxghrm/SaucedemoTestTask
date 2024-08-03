@@ -28,7 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Tests\Cart\" />
     <Folder Include="Tests\Checkout\" />
     <Folder Include="Tests\Products\" />
   </ItemGroup>

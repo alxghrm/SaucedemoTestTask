@@ -9,7 +9,7 @@ namespace SaucedemoTestTask.Tests.Authentication
     {
         [Test]
         [TestCaseSource(typeof(AuthenticationCredentials), nameof(AuthenticationCredentials.CredentialsDataSource))]
-        public async Task Login(AuthenticationModel authentication)
+        public async Task LoginWithDifferentUsers(AuthenticationModel authentication)
         {
             var page = new BasePage(await context.NewPageAsync());
             await page.GoToAsync("\\");

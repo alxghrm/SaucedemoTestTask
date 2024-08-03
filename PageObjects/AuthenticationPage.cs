@@ -4,17 +4,18 @@ namespace SaucedemoTestTask.PageObjects
 {
     public class AuthenticationPage
     {
+        public readonly ILocator error;
         private readonly ILocator _usernameInput;
         private readonly ILocator _passwordInput;
         private readonly ILocator _loginButton;
-        public readonly ILocator error;
+
 
         public AuthenticationPage(IPage page)
         {
+            error = page.GetByTestId("error");
             _usernameInput = page.GetByTestId("username");
             _passwordInput = page.GetByTestId("password");
             _loginButton = page.GetByTestId("login-button");
-            error = page.GetByTestId("error");
         }
 
         public async Task TypeInCredentials(string username, string password)

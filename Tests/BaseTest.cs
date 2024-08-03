@@ -1,14 +1,27 @@
-﻿using Microsoft.Playwright;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Playwright;
+using System.Reflection;
 
 namespace SaucedemoTestTask.Tests
 {
     public class BaseTest
     {
+        public IConfigurationRoot config;
         public IBrowserContext context;
         public string todayDate = DateTime.Now.ToString("yyyy_MM_dd");
         public string todayTime = DateTime.Now.ToString("HH_mm_ss");
         public int screenWidth = 1920;
         public int screenHeight = 1080;
+
+        [OneTimeSetUp]
+        public async Task ConfigSetup()
+        {
+            config = new ConfigurationBuilder()
+                .SetBasePath(AppContext.BaseDirectory)
+                .AddJsonFile("appsettings.json", optional: true)
+                .AddUserSecrets(Assembly.GetExecutingAssembly())
+                .Build();
+        }
 
         [SetUp]
         public async Task SetUpPlaywright()

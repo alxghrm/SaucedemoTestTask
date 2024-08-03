@@ -6,6 +6,11 @@ namespace SaucedemoTestTask.PageObjects
     {
         private readonly IPage _page;
         public AuthenticationPage authenticationPage;
+        public CartPage cartPage;
+        public CheckoutOnePage checkoutOnePage;
+        public CheckoutTwoPage checkoutTwoPage;
+        public CheckoutCompletePage checkoutCompletePage;
+        public HamburgerMenuPage hamburgerMenuPage;
         public InventoryPage inventoryPage;
 
         public BasePage(IPage page)
@@ -13,6 +18,11 @@ namespace SaucedemoTestTask.PageObjects
             _page = page;
             _page.SetDefaultTimeout(5000);
             authenticationPage = new AuthenticationPage(page);
+            cartPage = new CartPage(page);
+            checkoutOnePage = new CheckoutOnePage(page);
+            checkoutTwoPage = new CheckoutTwoPage(page);
+            checkoutCompletePage = new CheckoutCompletePage(page);
+            hamburgerMenuPage = new HamburgerMenuPage(page);
             inventoryPage = new InventoryPage(page);
         }
 

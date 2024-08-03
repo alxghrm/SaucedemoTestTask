@@ -5,12 +5,17 @@ namespace SaucedemoTestTask.PageObjects
     public class InventoryPage
     {
         public readonly ILocator title;
+        public readonly ILocator cartBadge;
         private readonly ILocator _itemList;
+        private readonly ILocator _cartLink;
+
         private readonly ILocator _addToCartBackpack;
         public InventoryPage(IPage page)
         {
             title = page.GetByTestId("title");
+            cartBadge = page.GetByTestId("shopping-cart-badge");
             _itemList = page.GetByTestId("inventory-list");
+            _cartLink = page.GetByTestId("shopping-cart-link");
             _addToCartBackpack = page.GetByTestId("add-to-cart-sauce-labs-backpack");
         }
 
@@ -18,6 +23,11 @@ namespace SaucedemoTestTask.PageObjects
         public async Task AddToCartBackpack()
         {
             await _addToCartBackpack.ClickAsync();
+        }
+
+        public async Task ClickCartLink()
+        {
+            await _cartLink.ClickAsync();
         }
     }
 }

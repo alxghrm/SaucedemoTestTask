@@ -7,6 +7,7 @@
 
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
+    <UserSecretsId>da8a973a-cb0c-4121-a2c6-25132c8e0f98</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -29,10 +30,13 @@
 
   <ItemGroup>
     <Folder Include="Tests\Checkout\" />
-    <Folder Include="Tests\Products\" />
+    <Folder Include="Tests\Inventory\" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="TestData\AuthenticationData\credentials.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -14,6 +14,7 @@ namespace SaucedemoTestTask.Tests
         public async Task SetUpPlaywright()
         {
             var playwright = await Playwright.CreateAsync();
+            playwright.Selectors.SetTestIdAttribute("data-test");
             var chromium = playwright.Chromium;
             var browser = await chromium.LaunchAsync(new BrowserTypeLaunchOptions
             {
@@ -25,7 +26,8 @@ namespace SaucedemoTestTask.Tests
             {
                 ViewportSize = new ViewportSize() { Width = screenWidth, Height = screenHeight },
                 RecordVideoDir = "videos/" + todayDate + "_" + todayTime + "_" + TestContext.CurrentContext.Test.Name.ToString(),
-                RecordVideoSize = new RecordVideoSize() { Width = screenWidth, Height = screenHeight }
+                RecordVideoSize = new RecordVideoSize() { Width = screenWidth, Height = screenHeight },
+                BaseURL = "https://www.saucedemo.com/"
             });
 
             await context.Tracing.StartAsync(new()

@@ -28,10 +28,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Tests\Authentication\" />
     <Folder Include="Tests\Cart\" />
     <Folder Include="Tests\Checkout\" />
     <Folder Include="Tests\Products\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="TestData\AuthenticationData\credentials.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

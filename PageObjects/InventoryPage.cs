@@ -8,6 +8,7 @@ namespace SaucedemoTestTask.PageObjects
         public readonly ILocator cartBadge;
         private readonly ILocator _itemList;
         private readonly ILocator _cartLink;
+        private readonly ILocator _productSortMenu;
 
         private readonly ILocator _addToCartBackpack;
         public InventoryPage(IPage page)
@@ -17,6 +18,7 @@ namespace SaucedemoTestTask.PageObjects
             _itemList = page.GetByTestId("inventory-list");
             _cartLink = page.GetByTestId("shopping-cart-link");
             _addToCartBackpack = page.GetByTestId("add-to-cart-sauce-labs-backpack");
+            _productSortMenu = page.GetByTestId("product-sort-container");
         }
 
 
@@ -28,6 +30,11 @@ namespace SaucedemoTestTask.PageObjects
         public async Task ClickCartLink()
         {
             await _cartLink.ClickAsync();
+        }
+
+        public async Task FilterByOption(string option)
+        {
+            await _productSortMenu.SelectOptionAsync(option);
         }
     }
 }

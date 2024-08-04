@@ -16,7 +16,7 @@ namespace SaucedemoTestTask.PageObjects
             _lastNameInput = page.GetByTestId("lastName");
             _postalCodeInput = page.GetByTestId("postalCode");
             _continueInput = page.GetByTestId("continue");
-            _continueInput = page.GetByTestId("cancel");
+            _cancelButton = page.GetByTestId("cancel");
         }
 
 

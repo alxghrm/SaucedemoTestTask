@@ -2,7 +2,7 @@
 using SaucedemoTestTask.Models;
 using SaucedemoTestTask.Utils;
 
-namespace SaucedemoTestTask.TestData.AuthenticationData
+namespace SaucedemoTestTask.TestData.Authentication
 {
     public class AuthenticationCredentials
     {

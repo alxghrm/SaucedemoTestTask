@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework.Legacy;
 using SaucedemoTestTask.Models;
 using SaucedemoTestTask.PageObjects;
-using SaucedemoTestTask.TestData.AuthenticationData;
+using SaucedemoTestTask.TestData.Authentication;
 
 namespace SaucedemoTestTask.Tests.Authentication
 {

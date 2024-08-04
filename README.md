@@ -1,12 +1,5 @@
 **Playwright .NET Test**
 
-Framework Structure:
-1. Page Objects
-2. Test Data
-3. Tests
-4. Models
-5. Utils
-
 
 Test Reporting:
 

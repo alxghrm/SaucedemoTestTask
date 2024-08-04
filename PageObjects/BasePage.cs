@@ -35,5 +35,6 @@ namespace SaucedemoTestTask.PageObjects
         {
             await _page.PauseAsync();
         }
+
     }
 }

@@ -6,11 +6,11 @@ namespace SaucedemoTestTask.TestData.Authentication
 {
     public class AuthenticationCredentials
     {
-        public static IEnumerable<TestCaseData> CredentialsDataSource()
+        public static List<TestCaseData> CredentialsDataSource()
         {
             JsonReaderUtility jsonReaderUtility = new JsonReaderUtility();
 
-            var contents = jsonReaderUtility.ReadJsonFile("TestData//AuthenticationData//Credentials.json");
+            var contents = jsonReaderUtility.ReadJsonFile("TestData//Authentication//Credentials.json");
             var credentials = JsonConvert.DeserializeObject<List<AuthenticationModel>>(contents);
             var testCases = new List<TestCaseData>();
 

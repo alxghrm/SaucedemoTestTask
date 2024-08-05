@@ -10,7 +10,6 @@ namespace SaucedemoTestTask.PageObjects
         private readonly ILocator _passwordInput;
         private readonly ILocator _loginButton;
 
-
         public AuthenticationPage(IPage page)
         {
             error = page.GetByTestId("error");

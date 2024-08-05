@@ -23,6 +23,7 @@ namespace SaucedemoTestTask.Tests.Authentication
             {
                 Assert.That(await page.authenticationPage.error.CountAsync(), Is.Zero);
                 StringAssert.Contains(await page.inventoryPage.title.TextContentAsync(), "Products");
+                Assert.That(await page.inventoryPage.inventoryItem.CountAsync(), Is.EqualTo(6));
             });
         }
     }

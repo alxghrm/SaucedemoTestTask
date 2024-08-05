@@ -6,16 +6,17 @@ namespace SaucedemoTestTask.PageObjects
     {
         public readonly ILocator title;
         public readonly ILocator cartBadge;
-        private readonly ILocator _itemList;
+        public readonly ILocator inventoryItem;
+        private readonly ILocator _inventoryList;
         private readonly ILocator _cartLink;
         private readonly ILocator _productSortMenu;
-
         private readonly ILocator _addToCartBackpack;
         public InventoryPage(IPage page)
         {
             title = page.GetByTestId("title");
             cartBadge = page.GetByTestId("shopping-cart-badge");
-            _itemList = page.GetByTestId("inventory-list");
+            inventoryItem = page.GetByTestId("inventory-item");
+            _inventoryList = page.GetByTestId("inventory-list");
             _cartLink = page.GetByTestId("shopping-cart-link");
             _addToCartBackpack = page.GetByTestId("add-to-cart-sauce-labs-backpack");
             _productSortMenu = page.GetByTestId("product-sort-container");

@@ -1,4 +1,5 @@
-﻿using SaucedemoTestTask.PageObjects;
+﻿using NUnit.Framework.Legacy;
+using SaucedemoTestTask.PageObjects;
 
 namespace SaucedemoTestTask.Tests.Cart
 {
@@ -17,6 +18,9 @@ namespace SaucedemoTestTask.Tests.Cart
             //Inventory
             await page.inventoryPage.AddToCartBackpack();
             await page.inventoryPage.ClickCartLink();
+
+            //Assert
+            StringAssert.Contains(await page.cartPage.itemQuantity.TextContentAsync(), "1");
         }
 
         [Test]
@@ -35,6 +39,9 @@ namespace SaucedemoTestTask.Tests.Cart
 
             //Cart
             await page.cartPage.RemoveBackpackButton();
+
+            //Assert
+            StringAssert.Contains(await page.cartPage.cartQuantityLabel.TextContentAsync(), "QTY");
         }
     }
 }

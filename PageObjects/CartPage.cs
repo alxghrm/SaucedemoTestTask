@@ -5,6 +5,8 @@ namespace SaucedemoTestTask.PageObjects
     public class CartPage
     {
         public readonly ILocator title;
+        public readonly ILocator itemQuantity;
+        public readonly ILocator cartQuantityLabel;
         private readonly ILocator _removeBackpackButton;
         private readonly ILocator _checkoutButton;
         private readonly ILocator _continueShoppingButton;
@@ -12,6 +14,8 @@ namespace SaucedemoTestTask.PageObjects
         public CartPage(IPage page)
         {
             title = page.GetByTestId("title");
+            itemQuantity = page.GetByTestId("item-quantity");
+            cartQuantityLabel = page.GetByTestId("cart-quantity-label");
             _checkoutButton = page.GetByTestId("checkout");
             _continueShoppingButton = page.GetByTestId("continue-shopping");
             _removeBackpackButton = page.GetByTestId("remove-sauce-labs-backpack");

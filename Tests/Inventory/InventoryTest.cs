@@ -18,7 +18,6 @@ namespace SaucedemoTestTask.Tests.Inventory
 
             //Inventory
             await page.inventoryPage.FilterByOption(option);
-
         }
     }
 }

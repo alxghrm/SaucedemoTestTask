@@ -3,10 +3,8 @@
 
 name: SauceDemoPlaywrightTest
   
-on:
-  push:
-    branches:
-    - none
+on: workflow_dispatch
+ 
 env:
   NAME: 'test'  
 jobs:

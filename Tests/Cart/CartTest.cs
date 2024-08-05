@@ -3,6 +3,8 @@ using SaucedemoTestTask.PageObjects;
 
 namespace SaucedemoTestTask.Tests.Cart
 {
+    [TestFixture]
+    [Category("CartTests")]
     public class CartTest : BaseTest
     {
         [Test]

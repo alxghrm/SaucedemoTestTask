@@ -31,10 +31,16 @@ jobs:
         BaseUrl: ${{ env.BASEURL }}
     - name: Test
       run: dotnet test --filter TestCategory=CartTests
-    - name: Publish Video
+    - name: Publish Traces
       uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
        name: video
        path: ${{github.workspace}}\bin\Debug\net8.0\videos
+    - name: Publish Video
+      uses: actions/upload-artifact@v4
+      if: ${{ !cancelled() }}
+      with:
+       name: video
+       path: ${{github.workspace}}\bin\Debug\net8.0\playwright-traces
    

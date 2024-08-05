@@ -1,5 +1,8 @@
 **Playwright .NET Test**
 
+Environment variables:
+
+Variables that need to be changed during pipeline runs should be defined in the **appsettings.json** file.
 
 Test Reporting:
 

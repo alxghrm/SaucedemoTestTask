@@ -1,4 +1,4 @@
-#### Playwright .NET Test Demo
+#### Playwright .NET Test 
 
 <br>
 Environment variables:<br>

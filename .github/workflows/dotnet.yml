@@ -5,12 +5,11 @@ name: SauceDemoPlaywrightTest
   
 on: workflow_dispatch
  
-env:
-  NAME: 'test'  
+
 jobs:
   build:
     runs-on: windows-latest
-
+    environment: 'test'     
     steps:
     - uses: actions/checkout@v4
     - name: Setup .NET

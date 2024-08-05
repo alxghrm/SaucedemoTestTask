@@ -32,7 +32,7 @@ namespace SaucedemoTestTask.Tests
             var browser = await chromium.LaunchAsync(new BrowserTypeLaunchOptions
             {
                 Channel = "chrome",
-                Headless = false
+                Headless = true
             });
 
             context = await browser.NewContextAsync(new()

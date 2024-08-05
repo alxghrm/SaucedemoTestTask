@@ -30,8 +30,21 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build 
     - name: Ensure browsers are installed
-      run: pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps    
+      run: pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps 
+    - name: App Settings Variable Substitution
+      uses: microsoft/variable-substitution@v1
+      with:
+        files: '${{env.DOTNET_ROOT}}/appsettings.json'
+      env:
+        Password: ${{ secrets.PASSWORD }}
+        UserName: ${{ env.USERNAME }}
+        BaseUrl: ${{ env.BASEURL }}
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --filter TestCategory=CartTests
+    - name: Publish Video
+      uses: actions/upload-artifact@v4
+      with:
+       name: video
+       path: ${{github.workspace}}/SaucedemoTestTask\bin\Debug\net8.0\playwright-traces

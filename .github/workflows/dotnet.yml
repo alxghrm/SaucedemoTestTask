@@ -34,7 +34,7 @@ jobs:
       uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
-       name: video
+       name: traces
        path: ${{github.workspace}}\bin\Debug\net8.0\videos
     - name: Publish Video
       uses: actions/upload-artifact@v4

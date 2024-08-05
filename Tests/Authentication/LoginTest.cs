@@ -12,7 +12,7 @@ namespace SaucedemoTestTask.Tests.Authentication
         public async Task LoginWithDifferentUsers(AuthenticationModel authentication)
         {
             var page = new BasePage(await context.NewPageAsync());
-            await page.GoToAsync("\\");
+            await page.GoToAsync("/");
 
             //Login
             await page.authenticationPage.TypeInCredentials(authentication.UserName, authentication.Password);

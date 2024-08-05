@@ -9,7 +9,7 @@ namespace SaucedemoTestTask.Tests.HamburgerMenu
         public async Task LoginAndLogout()
         {
             var page = new BasePage(await context.NewPageAsync());
-            await page.GoToAsync("\\");
+            await page.GoToAsync("/");
 
             //Login
             await page.authenticationPage.TypeInCredentials(config["UserName"], config["Password"]);
@@ -27,7 +27,7 @@ namespace SaucedemoTestTask.Tests.HamburgerMenu
         public async Task NavigateFromCartToInventory()
         {
             var page = new BasePage(await context.NewPageAsync());
-            await page.GoToAsync("\\");
+            await page.GoToAsync("/");
 
             //Login
             await page.authenticationPage.TypeInCredentials(config["UserName"], config["Password"]);

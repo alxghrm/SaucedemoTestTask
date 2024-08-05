@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Playwright;
-using System.Reflection;
 
 namespace SaucedemoTestTask.Tests
 {
@@ -19,7 +18,7 @@ namespace SaucedemoTestTask.Tests
             config = new ConfigurationBuilder()
                 .SetBasePath(AppContext.BaseDirectory)
                 .AddJsonFile("appsettings.json", optional: true)
-                .AddUserSecrets(Assembly.GetExecutingAssembly())
+                //.AddUserSecrets(Assembly.GetExecutingAssembly())
                 .Build();
         }
 

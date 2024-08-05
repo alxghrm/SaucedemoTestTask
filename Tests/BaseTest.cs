@@ -50,9 +50,6 @@ namespace SaucedemoTestTask.Tests
                 Snapshots = true,
                 Sources = true
             });
-
-
-
         }
 
 
@@ -72,4 +69,3 @@ namespace SaucedemoTestTask.Tests
         }
     }
 }
-
